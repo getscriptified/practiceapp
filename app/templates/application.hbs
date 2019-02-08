@@ -1,9 +1,14 @@
 {{outlet}}
 
 {{#each model as | data |}}
-	{{data.title}}
+	{{data.title}} <button {{action 'deleteGame' data}}>Delete</button> <button {{action 'editRecord' data}}>Edit</button> <br/><br/>
 {{/each}}
 
-
-{{input type="text" value=title}}
-<button {{action 'createGame'}}> Add Game </button>
+{{#if editData}}
+	{{input type="text" value=editData.title}}
+	<button {{action 'response' true}}> save </button>
+	<button {{action 'response' false}}> Cancel </button>
+{{else}}
+	{{input type="text" value=title}}
+	<button {{action 'createGame'}}> Add Game </button>
+{{/if}}
