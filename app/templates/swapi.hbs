@@ -1,0 +1,7 @@
+{{#each model as | data |}}
+	{{data.title}} <br/><br/>
+	{{#each data.people as |person|}}
+		{{person.name}}
+	{{/each}}
+	<br><br><br>
+{{/each}}
