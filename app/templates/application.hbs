@@ -1,5 +1,9 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-{{welcome-page}}
-{{!-- Feel free to remove this! --}}
-
 {{outlet}}
+
+{{#each model as | data |}}
+	{{data.title}}
+{{/each}}
+
+
+{{input type="text" value=title}}
+<button {{action 'createGame'}}> Add Game </button>
